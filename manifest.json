@@ -1,0 +1,35 @@
+{
+    "name": "Geddit",
+    "version": "1.0",
+    "description": "Reddit Search tool and hides right menu.",
+    "permissions": [
+        "tabs",        
+        "https://www.reddit.com/*"
+    ],
+    "browser_action": {
+        "default_title": "Geddit",
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "commands": {        
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+S",
+                "mac": "MacCtrl+Shift+S"
+            }
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.reddit.com/*"
+            ],
+            "css": [],
+            "js": [
+                "myscript.js"
+            ]
+        }
+    ],
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
